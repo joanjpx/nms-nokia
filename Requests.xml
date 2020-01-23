@@ -1,0 +1,305 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP:Header>
+        <header xmlns="xmlapi_1.0">
+            <security>
+                <user>oss_user</user>
+                <password>dc39c00e384ca91b2183a6790acc192b</password>
+            </security>
+            <requestID>client1:0</requestID>
+        </header>
+    </SOAP:Header>
+    <SOAP:Body>
+        <findToFile xmlns="xmlapi_1.0">
+            <fullClassName>service.SapBaseStatsLogRecord</fullClassName>
+            <filter>
+                <between name="timeCaptured" first="'.$date_start.'" second="'.$date_end.'"/>
+            </filter>
+            <fileName>sftp://smrt_dataentry_sftp:FTPseguro2019@'.env('FTP_IP').'/DataEntry_NOKIA-SAM'.'/'.$generated.'-service.xml</fileName>
+            <timeStamp>false</timeStamp>
+            <resultFilter>
+                <attribute>timeCaptured</attribute>
+                <attribute>monitoredObjectSiteId</attribute>
+                <attribute>monitoredObjectSiteName</attribute>
+                <attribute>displayedName</attribute>
+                <attribute>customerId</attribute>
+                <attribute>monitoredObjectPointer</attribute>
+                <attribute>ingressQChipForwardedInProfOctetsPeriodic</attribute>
+                <attribute>ingressQChipForwardedOutProfOctetsPeriodic</attribute>
+                <attribute>egressQChipForwardedInProfOctetsPeriodic</attribute>
+                <attribute>egressQChipForwardedOutProfOctetsPeriodic</attribute>
+                <attribute>periodicTime</attribute>
+                <children />
+            </resultFilter>
+        </findToFile>
+    </SOAP:Body>
+</SOAP:Envelope>
+
+
+
+
+
+
+
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP:Header>
+        <header xmlns="xmlapi_1.0">
+            <security>
+                <user>oss_user</user>
+                <password>dc39c00e384ca91b2183a6790acc192b</password>
+            </security>
+            <requestID>client1:0</requestID>
+        </header>
+    </SOAP:Header>
+    <SOAP:Body>
+        <findToFile xmlns="xmlapi_1.0">
+            <fullClassName>service.Service</fullClassName>
+            <fileName>sftp://smrt_dataentry_sftp:FTPseguro2019@'.env('FTP_IP').'/DataEntry_NOKIA-SAM/ServiceID.xml</fileName>
+            <timeStamp>true</timeStamp>
+            <filter />
+            <resultFilter>
+              <attribute>id</attribute>
+              <attribute>serviceId</attribute>
+              <attribute>displayedName</attribute>
+              <children />
+            </resultFilter>
+        </findToFile>
+    </SOAP:Body>
+</SOAP:Envelope>
+
+
+
+
+
+########### ADITIONAL PARAMETERS
+
+
+
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+
+  <SOAP:Header>
+    <header xmlns="xmlapi_1.0">
+      <security>
+        <user>'.env('USUARIO_NOKIA').'</user>
+        <password>'.env('PASSWORD_NOKIA').'</password>
+      </security>
+      <requestID>client1:0</requestID>
+    </header>
+  </SOAP:Header>
+  <SOAP:Body>
+    <findToFile xmlns="xmlapi_1.0">
+      <fullClassName>equipment.DDMStatsLogRecord</fullClassName>
+      <filter class="equipment.DDMStatsLogRecord">
+        <between first="'.$start.'" name="timeCaptured" second="'.$end.'"/>
+      </filter>
+      <fileName>sftp://smrt_dataentry_sftp:FTPseguro2019@'.env('FTP_IP').'/DataEntry_NOKIA-SAM-Additional_Parameters/'.$generated.'_AdditionalParameters.xml</fileName>
+      <timeStamp>false</timeStamp>
+      <resultFilter>
+        <attribute>rxOpticalPower</attribute>
+        <attribute>txOutputPower</attribute>
+        <attribute>monitoredObjectSiteName</attribute>
+        <attribute>monitoredObjectSiteId</attribute>
+        <attribute>monitoredObjectPointer</attribute>
+        <attribute>displayedName</attribute>
+        <attribute>periodicTime</attribute>
+        <attribute>timeCaptured</attribute>
+        <children/>
+      </resultFilter>
+    </findToFile>
+
+  </SOAP:Body>
+
+</SOAP:Envelope>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Header>
+    <header xmlns="xmlapi_1.0">
+      <security>
+        <user>oss_user</user>
+        <password>dc39c00e384ca91b2183a6790acc192b</password>
+      </security>
+      <requestID>client1:0</requestID>
+    </header>
+  </SOAP:Header>
+  <SOAP:Body>
+    <find xmlns="xmlapi_1.0">
+      <fullClassName>equipment.DDMStatsLogRecord</fullClassName>
+      <filter class="equipment.DDMStatsLogRecord">
+        <between first="1579791600000" name="timeCaptured" second="1579793400000"/>
+      </filter>
+      <resultFilter>
+        <attribute>rxOpticalPower</attribute>
+        <attribute>txOutputPower</attribute>
+        <attribute>monitoredObjectSiteName</attribute>
+        <attribute>monitoredObjectSiteId</attribute>
+        <attribute>monitoredObjectPointer</attribute>
+        <attribute>displayedName</attribute>
+        <attribute>periodicTime</attribute>
+        <attribute>timeCaptured</attribute>
+        <children/>
+      </resultFilter>
+    </find>
+  </SOAP:Body>
+</SOAP:Envelope>
+
+
+
+
+##### PERFORMANCES
+
+
+
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Header>
+    <header xmlns="xmlapi_1.0">
+      <security>
+        <user>'.env('USUARIO_NOKIA').'</user>
+        <password>'.env('PASSWORD_NOKIA').'</password>
+      </security>
+      <requestID>client1:0</requestID>
+    </header>
+  </SOAP:Header>
+  <SOAP:Body>
+    <findToFile xmlns="xmlapi_1.0">
+      <fullClassName>svt.TunnelPingResult</fullClassName>
+      <filter Class="svt.TunnelPingResult">
+        <and>
+          <equal name="testSuite" value="sas:test-suite-3"/>
+          <between first="'.$start.'" name="timeCaptured" second="'.$end.'"/>
+        </and>
+      </filter>
+      <fileName>sftp://smrt_dataentry_sftp:FTPseguro2019@10.255.12.123/DataEntry_NOKIA-SAM-Performances/resultado_Performances.xml</fileName>
+      <timeStamp>false</timeStamp>
+      <resultFilter>
+        <attribute>fromNodeId</attribute>
+        <attribute>returnNodeId</attribute>
+        <attribute>testedObject</attribute>
+        <attribute>timeCaptured</attribute>
+        <attribute>roundTripJitter</attribute>
+        <attribute>packetsLost</attribute>
+        <attribute>averageRoundTripTime</attribute>
+        <children/>
+      </resultFilter>
+    </findToFile>
+  </SOAP:Body>
+</SOAP:Envelope>
+
+
+
+
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Header>
+    <header xmlns="xmlapi_1.0">
+      <security>
+        <user>'.env('USUARIO_NOKIA').'</user>
+        <password>'.env('PASSWORD_NOKIA').'</password>
+      </security>
+      <requestID>client1:0</requestID>
+    </header>
+  </SOAP:Header>
+  <SOAP:Body>
+    <find xmlns="xmlapi_1.0">
+      <fullClassName>svt.TunnelPingResult</fullClassName>
+      <filter Class="svt.TunnelPingResult">
+        <and>
+          <equal name="testSuite" value="sas:test-suite-2"/>
+          <between first="'.$start.'" name="timeCaptured" second="'.$end.'"/>
+        </and>
+      </filter>
+      <resultFilter>
+        <attribute>fromNodeId</attribute>
+        <attribute>returnNodeId</attribute>
+        <attribute>testedObject</attribute>
+        <attribute>timeCaptured</attribute>
+        <attribute>roundTripJitter</attribute>
+        <attribute>packetsLost</attribute>
+        <attribute>averageRoundTripTime</attribute>
+        <children/>
+      </resultFilter>
+    </find>
+  </SOAP:Body>
+</SOAP:Envelope>
+
+
+
+### USE OF SERVICE
+
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Header>
+    <header xmlns="xmlapi_1.0">
+      <security>
+        <user>oss_user</user>
+        <password>dc39c00e384ca91b2183a6790acc192b</password>
+      </security>
+      <requestID>client1:0</requestID>
+    </header>
+  </SOAP:Header>
+  <SOAP:Body>
+   <findToFile xmlns="xmlapi_1.0">
+      <fullClassName>equipment.InterfaceAdditionalStatsLogRecord</fullClassName>
+      <filter class="equipment.InterfaceAdditionalStatsLogRecord">
+        <between first="'.$start.'" name="timeCaptured" second="'.$end.'"/>
+      </filter>
+      <fileName>sftp://smrt_dataentry_sftp:FTPseguro2019@10.255.12.123/DataEntry_NOKIA-SAM-Use_Of_Service/resultado_UseOfServiceTest.xml</fileName>
+      <timeStamp>false</timeStamp>
+      <resultFilter>
+        <attribute>timeCaptured</attribute>
+        <attribute>monitoredObjectSiteId</attribute>
+        <attribute>monitoredObjectSiteName</attribute>
+        <attribute>receivedTotalOctets</attribute>
+        <attribute>transmittedTotalOctets</attribute>
+        <attribute>receivedTotalOctetsPeriodic</attribute>
+        <attribute>transmittedTotalOctetsPeriodic</attribute>
+        <attribute>periodicTime</attribute>
+        <attribute>displayedName</attribute>
+        <children />
+      </resultFilter>
+    </findToFile>
+  </SOAP:Body>
+</SOAP:Envelope>
+
+
+
+
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Header>
+    <header xmlns="xmlapi_1.0">
+      <security>
+        <user>'.env('USUARIO_NOKIA').'</user>
+        <password>'.env('PASSWORD_NOKIA').'</password>
+      </security>
+      <requestID>client1:0</requestID>
+    </header>
+  </SOAP:Header>
+  <SOAP:Body>
+    <find xmlns="xmlapi_1.0">
+      <fullClassName>equipment.InterfaceAdditionalStatsLogRecord</fullClassName>
+      <filter class="equipment.InterfaceAdditionalStatsLogRecord">
+        <between first="'.$start.'" name="timeCaptured" second="'.$end.'"/>
+      </filter>
+      <resultFilter>
+        <attribute>timeCaptured</attribute>
+        <attribute>monitoredObjectSiteId</attribute>
+        <attribute>monitoredObjectSiteName</attribute>
+        <attribute>receivedTotalOctets</attribute>
+        <attribute>transmittedTotalOctets</attribute>
+        <attribute>receivedTotalOctetsPeriodic</attribute>
+        <attribute>transmittedTotalOctetsPeriodic</attribute>
+        <attribute>periodicTime</attribute>
+        <attribute>displayedName</attribute>
+        <children />
+      </resultFilter>
+    </find>
+  </SOAP:Body>
+</SOAP:Envelope>
