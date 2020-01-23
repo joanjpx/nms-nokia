@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "becf74ca-75fe-46f6-9e42-1c654c38f1c5",
+		"name": "NOKIA-NMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AdditionalParameters",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<SOAP:Envelope xmlns:SOAP=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n  <SOAP:Header>\r\n    <header xmlns=\"xmlapi_1.0\">\r\n      <security>\r\n        <user>oss_user</user>\r\n        <password>dc39c00e384ca91b2183a6790acc192b</password>\r\n      </security>\r\n      <requestID>client1:0</requestID>\r\n    </header>\r\n  </SOAP:Header>\r\n  <SOAP:Body>\r\n    <find xmlns=\"xmlapi_1.0\">\r\n      <fullClassName>equipment.DDMStatsLogRecord</fullClassName>\r\n      <filter class=\"equipment.DDMStatsLogRecord\">\r\n        <between first=\"1579791600000\" name=\"timeCaptured\" second=\"1579793400000\"/>\r\n      </filter>\r\n      <resultFilter>\r\n        <attribute>rxOpticalPower</attribute>\r\n        <attribute>txOutputPower</attribute>\r\n        <attribute>monitoredObjectSiteName</attribute>\r\n        <attribute>monitoredObjectSiteId</attribute>\r\n        <attribute>monitoredObjectPointer</attribute>\r\n        <attribute>displayedName</attribute>\r\n        <attribute>periodicTime</attribute>\r\n        <attribute>timeCaptured</attribute>\r\n        <children/>\r\n      </resultFilter>\r\n    </find>\r\n  </SOAP:Body>\r\n</SOAP:Envelope>\r\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.255.10.8:8080/xmlapi/invoke",
+					"protocol": "http",
+					"host": [
+						"10",
+						"255",
+						"10",
+						"8"
+					],
+					"port": "8080",
+					"path": [
+						"xmlapi",
+						"invoke"
+					]
+				},
+				"description": "Peticion Para Parametros Adicionales NOKIA"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
