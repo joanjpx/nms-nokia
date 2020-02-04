@@ -1,0 +1,30 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP:Header>
+    <header xmlns="xmlapi_1.0">
+      <security>
+        <user>oss_user</user>
+        <password>c36b885125105c462d34774140eec076</password>
+      </security>
+      <requestID>client1:0</requestID>
+    </header>
+  </SOAP:Header>
+  <SOAP:Body>
+    <find xmlns="xmlapi_1.0">
+      <fullClassName>svt.TunnelPingResult</fullClassName>
+      <filter Class="svt.TunnelPingResult">
+        <and>
+          <equal name="testSuite" value="sas:test-suite-3"/>
+          <between first="1521040249000" name="timeCaptured" second="1521040549000"/>
+        </and>
+      </filter>
+      <resultFilter>
+        <attribute>fromNodoId</attribute>
+        <attribute>testedObject</attribute>
+        <attribute>timeCaptured</attribute>
+        <attribute>roundTripJitter</attribute>
+        <attribute>packetsLost</attribute>
+        <children/>
+      </resultFilter>
+    </find>
+  </SOAP:Body>
+</SOAP:Envelope>

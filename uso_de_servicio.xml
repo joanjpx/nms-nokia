@@ -1,0 +1,57 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+
+  <SOAP:Header>
+
+    <header xmlns="xmlapi_1.0">
+
+      <security>
+
+        <user>oss_user</user>
+
+        <password>c36b885125105c462d34774140eec076</password>
+
+      </security>
+
+      <requestID>client1:0</requestID>
+
+    </header>
+
+  </SOAP:Header>
+
+  <SOAP:Body>
+
+    <find xmlns="xmlapi_1.0">
+
+        <fullClassName>equipment.InterfaceAdditionalStatsLogRecord</fullClassName>
+
+      
+
+      <resultFilter>
+
+        <attribute>timeCaptured</attribute>
+
+        <attribute>monitoredObjectSiteId</attribute>
+
+        <attribute>monitoredObjectSiteName</attribute>
+
+        <attribute>displayedName</attribute>
+
+        <attribute>receivedTotalOctets</attribute>
+
+        <attribute>transmittedTotalOctets</attribute>
+
+        <attribute>receivedTotalOctetsPeriodic</attribute>
+
+        <attribute>transmittedTotalOctetsPeriodic</attribute>
+
+        <attribute>periodicTime</attribute>
+
+        
+
+      </resultFilter>
+
+    </find>
+
+  </SOAP:Body>
+
+</SOAP:Envelope>

@@ -1,0 +1,37 @@
+<SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/">
+
+  <SOAP:Header>
+
+    <header xmlns="xmlapi_1.0">
+
+      <security>
+
+        <user>oss_user</user>
+
+        <password>c36b885125105c462d34774140eec076</password>
+
+      </security>
+
+      <requestID>client1:0</requestID>
+
+    </header>
+
+  </SOAP:Header>
+
+  <SOAP:Body>
+
+    <find xmlns="xmlapi_1.0">
+
+      <fullClassName>equipment.DigitalDiagnosticMonitoring</fullClassName>
+      <resultFilter>
+        <attribute>siteName</attribute>
+        <attribute>rxOpticalPower</attribute>
+        <attribute>rxOpticalPowerHighAlarm</attribute>
+        <attribute>txOutputPower</attribute>
+        <attribute>txOutputPowerHighAlarm</attribute>
+      </resultFilter>
+    </find>
+
+  </SOAP:Body>
+
+</SOAP:Envelope>
